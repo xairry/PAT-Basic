@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>1053. 住房空置率 (20) | Programming Ability Test</title>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="mKFgpzSo/nHuqJk4zWSNDrHAVkoHnkvZM0w3UWVi0ZY=" name="csrf-token" />
+    <link href="/s/application-70953deae3fb7747ba7b1bca82481290.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]><link href="/s/blueprint/ie-95046ca80744645e3475cae5890744b7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if lt IE 7]><link href="/s/custom_ie6-01f58d47daa14cae5a4d256ed3368756.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <script src="/s/application-354b0ac70ff1396b9748c0c4ce73eda3.js" type="text/javascript"></script>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' -->
+  </head>
+  <body>
+    <div class="container">
+      <div id="pageHeader">
+  <div id="logo" class="lfloat">
+    <a href="/"><img alt="Logo" src="/images/logo.png" /></a>
+  </div>
+  <div id="headerInfo" class="rfloat">
+        <a href="/users/sign_in">[登录]</a>
+          <a href="/users/sign_up">[注册]</a>
+  </div>
+  <hr> 
+</div>
+
+
+      <div id="navibar" class="span-3">
+  <ul>
+    <li><a href="/">主页</a></li>
+
+    <li><a href="/contests">题目集</a></li>
+
+      <div id='psnavi'>
+        <ul>
+          <li><a href="/contests/pat-b-practise/information">基本信息</a></li>
+          <li><a href="/contests/pat-b-practise">题目列表</a></li>
+		  <li><a href="/contests/pat-b-practise/submissions?self=true">提交列表</a></li>
+            <li><a href="/contests/pat-b-practise/ranklist">排名</a></li>
+        </ul>
+      </div>
+
+
+    <li><a href="/help">帮助</a></li>
+  </ul>
+</div>
+
+
+
+      <div id="body" class="span-22 last">
+
+
+            <h1>1053. 住房空置率 (20)</h1>
+        <div id='problemInfo' class='rfloat'>
+  <div class='limit'>
+  <div class='key'>
+    时间限制
+  </div>
+  <div class='value'>
+    400 ms<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    内存限制
+  </div>
+  <div class='value'>
+    65536 kB<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    代码长度限制
+  </div>
+  <div class='value'>
+    8000 B<br>
+  </div>
+</div>
+
+
+
+  <div class='checker'>
+    <div class='key'>
+      判题程序
+    </div>
+    <div class='value'>
+      <span title='纯文本对比'>Standard</span>
+    </div>
+  </div>
+
+    <div class='key'>
+      作者
+    </div>
+    <div class='value'>
+      CHEN, Yue<br>
+    </div>
+</div>
+
+
+<div id='problemContent'>
+  <p>
+在不打扰居民的前提下，统计住房空置率的一种方法是根据每户用电量的连续变化规律进行判断。判断方法如下：
+</p>
+
+<ul>
+<li> 在观察期内，若存在超过一半的日子用电量低于某给定的阈值e，则该住房为“可能空置”；
+<li> 若观察期超过某给定阈值D天，且满足上一个条件，则该住房为“空置”。
+</ul>
+
+<p>现给定某居民区的住户用电量数据，请你统计“可能空置”的比率和“空置”比率，即以上两种状态的住房占居民区住房总套数的百分比。
+</p>
+
+<p><b>
+输入格式：
+</b></p>
+
+<p>
+输入第一行给出正整数N（&lt;=1000），为居民区住房总套数；正实数e，即低电量阈值；正整数D，即观察期阈值。随后N行，每行按以下格式给出一套住房的用电量数据：
+</p>
+<p>
+K E<sub>1</sub> E<sub>2</sub> ... E<sub>K</sub>
+</p>
+<p>
+其中K为观察的天数，E<sub>i</sub>为第i天的用电量。
+</p>
+<p><b>
+输出格式：
+</b></p>
+
+<p>
+在一行中输出“可能空置”的比率和“空置”比率的百分比值，其间以一个空格分隔，保留小数点后1位。
+</p>
+
+<b>输入样例：</b><pre>
+5 0.5 10
+6 0.3 0.4 0.5 0.2 0.8 0.6
+10 0.0 0.1 0.2 0.3 0.0 0.8 0.6 0.7 0.0 0.5
+5 0.4 0.3 0.5 0.1 0.7
+11 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+11 2 2 2 1 1 0.1 1 0.1 0.1 0.1 0.1
+</pre>
+
+<b>输出样例：</b><pre>
+40.0% 20.0%
+</pre>
+<p>
+（样例解释：第2、3户为“可能空置”，第4户为“空置”，其他户不是空置。）
+</p>
+
+</div>
+
+<hr>
+
+
+
+
+
+
+
+      </div>
+
+      <div id="pageFooter" class="center">
+  <hr class="nomarginbottom">
+  <div id="footerContainer">
+    <div class="center">
+      版权所有 (C) 2011-2017 浙江大学计算机科学与技术学院
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+  </body>
+</html>
+
+<!--  -->
+

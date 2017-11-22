@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>1071. 小赌怡情(15) | Programming Ability Test</title>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="FV9oRSP5suLaQJh39L1WZBa7rlaHG+4mvQonrmH9esA=" name="csrf-token" />
+    <link href="/s/application-70953deae3fb7747ba7b1bca82481290.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]><link href="/s/blueprint/ie-95046ca80744645e3475cae5890744b7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if lt IE 7]><link href="/s/custom_ie6-01f58d47daa14cae5a4d256ed3368756.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <script src="/s/application-354b0ac70ff1396b9748c0c4ce73eda3.js" type="text/javascript"></script>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' -->
+  </head>
+  <body>
+    <div class="container">
+      <div id="pageHeader">
+  <div id="logo" class="lfloat">
+    <a href="/"><img alt="Logo" src="/images/logo.png" /></a>
+  </div>
+  <div id="headerInfo" class="rfloat">
+        <a href="/users/sign_in">[登录]</a>
+          <a href="/users/sign_up">[注册]</a>
+  </div>
+  <hr> 
+</div>
+
+
+      <div id="navibar" class="span-3">
+  <ul>
+    <li><a href="/">主页</a></li>
+
+    <li><a href="/contests">题目集</a></li>
+
+      <div id='psnavi'>
+        <ul>
+          <li><a href="/contests/pat-b-practise/information">基本信息</a></li>
+          <li><a href="/contests/pat-b-practise">题目列表</a></li>
+		  <li><a href="/contests/pat-b-practise/submissions?self=true">提交列表</a></li>
+            <li><a href="/contests/pat-b-practise/ranklist">排名</a></li>
+        </ul>
+      </div>
+
+
+    <li><a href="/help">帮助</a></li>
+  </ul>
+</div>
+
+
+
+      <div id="body" class="span-22 last">
+
+
+            <h1>1071. 小赌怡情(15)</h1>
+        <div id='problemInfo' class='rfloat'>
+  <div class='limit'>
+  <div class='key'>
+    时间限制
+  </div>
+  <div class='value'>
+    400 ms<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    内存限制
+  </div>
+  <div class='value'>
+    65536 kB<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    代码长度限制
+  </div>
+  <div class='value'>
+    8000 B<br>
+  </div>
+</div>
+
+
+
+  <div class='checker'>
+    <div class='key'>
+      判题程序
+    </div>
+    <div class='value'>
+      <span title='纯文本对比'>Standard</span>
+    </div>
+  </div>
+
+    <div class='key'>
+      作者
+    </div>
+    <div class='value'>
+      CHEN, Yue<br>
+    </div>
+</div>
+
+
+<div id='problemContent'>
+  <p>常言道“小赌怡情”。这是一个很简单的小游戏：首先由计算机给出第一个整数；然后玩家下注赌第二个整数将会比第一个数大还是小；玩家下注t个筹码后，计算机给出第二个数。若玩家猜对了，则系统奖励玩家t个筹码；否则扣除玩家t个筹码。
+</p>
+<p>
+注意：玩家下注的筹码数不能超过自己帐户上拥有的筹码数。当玩家输光了全部筹码后，游戏就结束。
+</p>
+
+<p><b>
+输入格式：
+</b></p>
+
+<p>
+输入在第一行给出2个正整数T和K（&lt;=100），分别是系统在初始状态下赠送给玩家的筹码数、以及需要处理的游戏次数。随后K行，每行对应一次游戏，顺序给出4个数字：
+</p>
+<p><b>
+n1 b t n2
+</b></p>
+<p>
+其中<b>n1</b>和<b>n2</b>是计算机先后给出的两个[0, 9]内的整数，保证两个数字不相等。<b>b</b>为0表示玩家赌“小”，为1表示玩家赌“大”。<b>t</b>表示玩家下注的筹码数，保证在整型范围内。
+</p>
+
+<p><b>
+输出格式：
+</b></p>
+
+<p>
+对每一次游戏，根据下列情况对应输出（其中t是玩家下注量，x是玩家当前持有的筹码量）：
+</p>
+<ul>
+<li>玩家赢，输出“Win t!  Total = x.”；
+<li>玩家输，输出“Lose t.  Total = x.”；
+<li>玩家下注超过持有的筹码量，输出“Not enough tokens.  Total = x.”；
+<li>玩家输光后，输出“Game Over.”并结束程序。
+</ul>
+
+<b>输入样例1：</b><pre>
+100 4
+8 0 100 2
+3 1 50 1
+5 1 200 6
+7 0 200 8
+</pre>
+
+<b>输出样例1：</b><pre>
+Win 100!  Total = 200.
+Lose 50.  Total = 150.
+Not enough tokens.  Total = 150.
+Not enough tokens.  Total = 150.
+</pre>
+
+<b>输入样例2：</b><pre>
+100 4
+8 0 100 2
+3 1 200 1
+5 1 200 6
+7 0 200 8
+</pre>
+
+<b>输出样例2：</b><pre>
+Win 100!  Total = 200.
+Lose 200.  Total = 0.
+Game Over.
+</pre>
+
+</div>
+
+<hr>
+
+
+
+
+
+
+
+      </div>
+
+      <div id="pageFooter" class="center">
+  <hr class="nomarginbottom">
+  <div id="footerContainer">
+    <div class="center">
+      版权所有 (C) 2011-2017 浙江大学计算机科学与技术学院
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+  </body>
+</html>
+
+<!--  -->
+

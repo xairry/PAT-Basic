@@ -1,37 +1,22 @@
 #include <iostream>
-#include <string>
-
+#include <cmath>
+#include <cstdio>
 using namespace std;
-
-void draw_horizontal(int, char);
-void draw_vertical(int, char);
-
 int main() {
-    int n;
-    char a;
-
-    cin>>n>>a;
-
-    draw_horizontal(n, a);
-    for (int i; i<((n + 1)/2 - 2); i++) 
-        draw_vertical(n, a);
-    draw_horizontal(n, a);
-
+    double r1, p1, r2, p2;
+    cin >> r1 >> p1 >> r2 >> p2;
+    double A, B;
+    A = r1 * r2 * cos(p1) * cos(p2) - r1 * r2 * sin(p1) * sin(p2);
+    B = r1 * r2 * cos(p1) * sin(p2) + r1 * r2 * sin(p1) * cos(p2);
+    if (A + 0.005 >= 0 && A < 0) //评论区有指出因为是四舍五入所以改成A + 0.005更合适
+        printf("0.00");
+    else
+        printf("%.2f", A);
+    if(B >= 0)
+        printf("+%.2fi", B);
+    else if (B + 0.01 >= 0 && B < 0)
+        printf("+0.00i");
+    else
+        printf("%.2fi", B);
     return 0;
 }
-
-void draw_horizontal(int n, char a) {
-    for (int i; i<n; i++)
-        cout<<a;
-
-    cout<<endl;
-}
-
-void draw_vertical(int n, char a) {
-    cout<<a;
-    for (int i; i<(n-2); i++)
-        cout<<' ';
-    cout<<a<<endl;
-}
-
-

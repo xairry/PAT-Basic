@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>1045. 快速排序(25) | Programming Ability Test</title>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="cRFf1CXdtrKlWV7qzBXW/TNiTwVUhTep11fk3V2H950=" name="csrf-token" />
+    <link href="/s/application-70953deae3fb7747ba7b1bca82481290.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]><link href="/s/blueprint/ie-95046ca80744645e3475cae5890744b7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if lt IE 7]><link href="/s/custom_ie6-01f58d47daa14cae5a4d256ed3368756.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <script src="/s/application-354b0ac70ff1396b9748c0c4ce73eda3.js" type="text/javascript"></script>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' -->
+  </head>
+  <body>
+    <div class="container">
+      <div id="pageHeader">
+  <div id="logo" class="lfloat">
+    <a href="/"><img alt="Logo" src="/images/logo.png" /></a>
+  </div>
+  <div id="headerInfo" class="rfloat">
+        <a href="/users/sign_in">[登录]</a>
+          <a href="/users/sign_up">[注册]</a>
+  </div>
+  <hr> 
+</div>
+
+
+      <div id="navibar" class="span-3">
+  <ul>
+    <li><a href="/">主页</a></li>
+
+    <li><a href="/contests">题目集</a></li>
+
+      <div id='psnavi'>
+        <ul>
+          <li><a href="/contests/pat-b-practise/information">基本信息</a></li>
+          <li><a href="/contests/pat-b-practise">题目列表</a></li>
+		  <li><a href="/contests/pat-b-practise/submissions?self=true">提交列表</a></li>
+            <li><a href="/contests/pat-b-practise/ranklist">排名</a></li>
+        </ul>
+      </div>
+
+
+    <li><a href="/help">帮助</a></li>
+  </ul>
+</div>
+
+
+
+      <div id="body" class="span-22 last">
+
+
+            <h1>1045. 快速排序(25)</h1>
+        <div id='problemInfo' class='rfloat'>
+  <div class='limit'>
+  <div class='key'>
+    时间限制
+  </div>
+  <div class='value'>
+    200 ms<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    内存限制
+  </div>
+  <div class='value'>
+    65536 kB<br>
+  </div>
+</div>
+<div class='limit'>
+  <div class='key'>
+    代码长度限制
+  </div>
+  <div class='value'>
+    8000 B<br>
+  </div>
+</div>
+
+
+
+  <div class='checker'>
+    <div class='key'>
+      判题程序
+    </div>
+    <div class='value'>
+      <span title='纯文本对比'>Standard</span>
+    </div>
+  </div>
+
+    <div class='key'>
+      作者
+    </div>
+    <div class='value'>
+      CAO, Peng<br>
+    </div>
+</div>
+
+
+<div id='problemContent'>
+  <p>
+著名的快速排序算法里有一个经典的划分过程：我们通常采用某种方法取一个元素作为主元，通过交换，把比主元小的元素放到它的左边，比主元大的元素放到它的右边。
+给定划分后的N个互不相同的正整数的排列，请问有多少个元素可能是划分前选取的主元？</p>
+
+<p>例如给定N = 5, 排列是1、3、2、4、5。则：</p>
+<p>
+<li>1的左边没有元素，右边的元素都比它大，所以它可能是主元；<br>
+<li>尽管3的左边元素都比它小，但是它右边的2它小，所以它不能是主元；<br>
+<li>尽管2的右边元素都比它大，但其左边的3比它大，所以它不能是主元；<br>
+<li>类似原因，4和5都可能是主元。</p>
+
+<p>因此，有3个元素可能是主元。
+</p>
+
+	
+<p><b>
+输入格式：
+</b></p>
+
+<p>
+输入在第1行中给出一个正整数N（&lt;= 10<sup>5</sup>）；
+第2行是空格分隔的N个不同的正整数，每个数不超过10<sup>9</sup>。
+</p>
+
+<p><b>
+输出格式：
+</b></p>
+
+<p>在第1行中输出有可能是主元的元素个数；在第2行中按递增顺序输出这些元素，其间以1个空格分隔，行末不得有多余空格。
+</p>
+
+<b>输入样例：</b><pre>
+5
+1 3 2 4 5
+</pre>
+
+
+<b>输出样例：</b><pre>
+3
+1 4 5
+</pre>
+
+
+</div>
+
+<hr>
+
+
+
+
+
+
+
+      </div>
+
+      <div id="pageFooter" class="center">
+  <hr class="nomarginbottom">
+  <div id="footerContainer">
+    <div class="center">
+      版权所有 (C) 2011-2017 浙江大学计算机科学与技术学院
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+  </body>
+</html>
+
+<!--  -->
+
