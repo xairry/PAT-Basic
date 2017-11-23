@@ -12,7 +12,7 @@ int main() {
         cin>>n1>>b>>t>>n2;
 
         if (t > sum) {
-            cout<<"Not enough tokens. Total = "<<sum<<".";
+            cout<<"Not enough tokens. Total = "<<sum<<"."<<endl;
         } else if ((n1 > n2 & b == 0) || (n1 < n2 & b == 1)) {
             // win
             sum += t;
@@ -21,10 +21,10 @@ int main() {
             // lose
             sum = sum - t;
             cout<<"Loss "<<t<<". "<<"Total = "<<sum<<"."<<endl;
-        }
-        if (sum <= 0) {
-            cout<<"Game Over.";
-            break;
+            if (sum <= 0) {
+                cout<<"Game Over.";
+                break;
+            }
         }
 
     }
