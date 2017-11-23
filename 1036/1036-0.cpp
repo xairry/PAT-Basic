@@ -1,22 +1,33 @@
 #include <iostream>
-#include <cmath>
-#include <cstdio>
 using namespace std;
 int main() {
-    double r1, p1, r2, p2;
-    cin >> r1 >> p1 >> r2 >> p2;
-    double A, B;
-    A = r1 * r2 * cos(p1) * cos(p2) - r1 * r2 * sin(p1) * sin(p2);
-    B = r1 * r2 * cos(p1) * sin(p2) + r1 * r2 * sin(p1) * cos(p2);
-    if (A + 0.005 >= 0 && A < 0) //评论区有指出因为是四舍五入所以改成A + 0.005更合适
-        printf("0.00");
-    else
-        printf("%.2f", A);
-    if(B >= 0)
-        printf("+%.2fi", B);
-    else if (B + 0.01 >= 0 && B < 0)
-        printf("+0.00i");
-    else
-        printf("%.2fi", B);
+    int N;
+    char c;
+    cin >> N >> c;
+    int row = 0;
+    for (int i = 0; i < N; i++) {
+        if ((2 * i * (i + 2) + 1) > N) {
+            row = i - 1;
+            break;
+        }
+    }
+    for (int i = row; i >= 1; i--) {
+        for (int k = row - i; k >= 1; k--)
+            cout << " ";
+        for (int j = i * 2 + 1; j >= 1; j--)
+            cout << c;
+        cout << endl;
+    }
+    for (int i = 0; i < row; i++)
+        cout << " ";
+    cout << c << endl;
+    for (int i = 1; i <= row; i++) {
+        for (int k = row - i; k >= 1; k--)
+            cout << " ";
+        for (int j = i * 2 + 1; j >= 1; j--)
+            cout << c;
+        cout << endl;
+    }
+    cout << (N - (2 * row * (row + 2) + 1));
     return 0;
 }
