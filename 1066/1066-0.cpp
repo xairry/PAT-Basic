@@ -11,7 +11,8 @@ int main() {
     for (int i=0; i<n_row; i++) {
         for (int j=0; j<n_col; j++) {
             int num;
-            cin>>num;
+            scanf("%d", &num); // using the cin will take too much time
+//            cin>>num;
             cout<<transform(num, from, to, replace);
             if (j<n_col-1)
                 cout<<" ";
@@ -33,6 +34,5 @@ string transform(int input, int from, int to, int replace) {
     int n_zero = 3 - output.length();
     string zero(n_zero, '0');
 
-    return zero + output;
+    return zero+output;
 }
-
