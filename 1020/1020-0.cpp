@@ -1,33 +1,49 @@
-#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+#include <math.h>
+
 using namespace std;
+
+typedef struct {
+    double store;
+    double price;
+} mooncake;
+
+bool cmp(mooncake a, mooncake b) {
+    return a.price > b.price;
+}
+
 int main() {
-    int N;
-    char c;
-    cin >> N >> c;
-    int row = 0;
-    for (int i = 0; i < N; i++) {
-        if ((2 * i * (i + 2) + 1) > N) {
-            row = i - 1;
+    int N; 
+    double D;
+    scanf("%d %lf", &N, &D);
+    mooncake mooncake_v[N];
+
+    for (int i=0; i<N; i++) {
+        scanf("%lf", &mooncake_v[i].store);
+    }
+
+    for (int i=0; i<N; i++) {
+        double sell;
+        scanf("%lf", &sell);
+        mooncake_v[i].price = (double) sell / mooncake_v[i].store;
+    }
+
+    sort(mooncake_v, mooncake_v + N, cmp);
+
+    double sum = 0;
+    for (int i=0; i<N; i++) {
+        if (D > mooncake_v[i].store) {
+            sum = (double) sum + mooncake_v[i].store * mooncake_v[i].price;
+            D = D - mooncake_v[i].store;
+        } else {
+            sum = (double) sum + D * mooncake_v[i].price;
             break;
         }
     }
-    for (int i = row; i >= 1; i--) {
-        for (int k=1; k<=row-i; k++)
-            cout << " ";
-        for (int j = i * 2 + 1; j >= 1; j--)
-            cout << c;
-        cout << endl;
-    }
-    for (int i = 0; i < row; i++)
-        cout << " ";
-    cout << c << endl;
-    for (int i = 1; i <= row; i++) {
-        for (int k=1; k<=row-i; k++)
-            cout << " ";
-        for (int j = i * 2 + 1; j >= 1; j--)
-            cout << c;
-        cout << endl;
-    }
-    cout << (N - (2 * row * (row + 2) + 1));
+
+    printf("%.2f", sum);
+
     return 0;
 }
+
