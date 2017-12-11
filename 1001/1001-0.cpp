@@ -20,7 +20,7 @@ int main() {
     return 0;
 }
 
-bool is_prime(int n) {
+bool is_odd(int n) {
     if (n % 2 == 0) {
         return false;
     } else {
