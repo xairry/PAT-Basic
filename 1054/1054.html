@@ -4,7 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>1054. 求平均值 (20) | Programming Ability Test</title>
     <meta content="authenticity_token" name="csrf-param" />
+<<<<<<< HEAD
+<meta content="4cUv3NmKiRjsdKBaNL0yaNIS8LLaXrHhzcp0ijai4AQ=" name="csrf-token" />
+=======
 <meta content="VYbgisSuxcLlr/UO9Y08n+Okg86GpGxjR1BX/eNojlI=" name="csrf-token" />
+>>>>>>> 5539e0544feccd83469e3ee9dc25881f029a2c44
     <link href="/s/application-70953deae3fb7747ba7b1bca82481290.css" media="screen" rel="stylesheet" type="text/css" />
     <!--[if lt IE 8]><link href="/s/blueprint/ie-95046ca80744645e3475cae5890744b7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if lt IE 7]><link href="/s/custom_ie6-01f58d47daa14cae5a4d256ed3368756.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -100,6 +104,7 @@
 
 
 <div id='problemContent'>
+<<<<<<< HEAD
   <p>
 本题的基本要求非常简单：给定N个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是[-1000，1000]区间内的实数，并且最多精确到小数点后2位。当你计算平均值的时候，不能把那些非法的数据算在内。</p>
 	
@@ -142,6 +147,50 @@ ERROR: aaa is not a legal number
 ERROR: -9999 is not a legal number
 The average of 0 numbers is Undefined
 </pre>
+=======
+  <p>
+本题的基本要求非常简单：给定N个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是[-1000，1000]区间内的实数，并且最多精确到小数点后2位。当你计算平均值的时候，不能把那些非法的数据算在内。</p>
+	
+<p><b>
+输入格式：
+</b></p>
+
+<p>
+输入第一行给出正整数N（&lt;=100）。随后一行给出N个实数，数字间以一个空格分隔。
+</p>
+
+<p><b>
+输出格式：
+</b></p>
+
+<p>
+对每个非法输入，在一行中输出“ERROR: X is not a legal number”，其中X是输入。最后在一行中输出结果：“The average of K numbers is Y”，其中K是合法输入的个数，Y是它们的平均值，精确到小数点后2位。如果平均值无法计算，则用“Undefined”替换Y。如果K为1，则输出“The average of 1 number is Y”。
+</p>
+
+<b>输入样例1：</b><pre>
+7
+5 -3.2 aaa 9999 2.3.4 7.123 2.35
+</pre>
+
+<b>输出样例1：</b><pre>
+ERROR: aaa is not a legal number
+ERROR: 9999 is not a legal number
+ERROR: 2.3.4 is not a legal number
+ERROR: 7.123 is not a legal number
+The average of 3 numbers is 1.38
+</pre>
+
+<b>输入样例2：</b><pre>
+2
+aaa -9999
+</pre>
+
+<b>输出样例2：</b><pre>
+ERROR: aaa is not a legal number
+ERROR: -9999 is not a legal number
+The average of 0 numbers is Undefined
+</pre>
+>>>>>>> 5539e0544feccd83469e3ee9dc25881f029a2c44
 
 </div>
 
