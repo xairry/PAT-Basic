@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     int n;
-    scanf("%d", &n);
+    scanf("%d\n", &n);
 
     // temp variables
     int valid_n = 0;
