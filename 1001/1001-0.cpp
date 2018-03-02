@@ -1,7 +1,8 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-bool is_prime(int n);
+bool is_odd(int n);
 
 int main() {
     int input;
@@ -9,7 +10,7 @@ int main() {
     cin>>input;
 
     while (input != 1) {
-        if (is_prime(input)) {
+        if (is_odd(input)) {
             input = (3 * input + 1) / 2;
         } else {
             input = input / 2;
