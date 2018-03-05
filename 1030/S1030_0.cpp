@@ -14,7 +14,7 @@ int main() {
     float p;
     scanf("%d %f", &N, &p);
 
-    long long * array = new long long(N);
+    long long * array = new long long [N];
 
     for (int i=0; i<N; i++) {
         scanf("%lld", &array[i]);

@@ -44,7 +44,10 @@ int main() {
         }
     }
 
-    printf("%d %s %s", valid_n, old_name.c_str(), young_name.c_str());
+    printf("%d", valid_n);
+    // if there is not valid input, do not output "white space".
+    if (valid_n != 0) 
+        printf(" %s %s", old_name.c_str(), young_name.c_str());
 
     return 0;
 }
