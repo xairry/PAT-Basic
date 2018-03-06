@@ -1,6 +1,6 @@
 #include <string>
 #include <stdio.h>
-
+#include<iostream>
 using namespace std;
 
 int main() {
@@ -43,8 +43,10 @@ int main() {
             old_name = t_name;
         }
     }
-
-    printf("%d %s %s", valid_n, old_name.c_str(), young_name.c_str());
+	
+	printf("%d",valid_n);
+	if(valid_n != 0	)printf(" %s %s",old_name.c_str(), young_name.c_str());
+    //printf("%d %s %s", valid_n, old_name.c_str(), young_name.c_str());
 
     return 0;
 }
