@@ -15,6 +15,7 @@ int main() {
     long long p;
     scanf("%d %lld", &N, &p);
 
+<<<<<<< HEAD
     long long *array = new long long[N];
     
 	
@@ -23,6 +24,12 @@ int main() {
     //long long int* point = array;
 	for (int i=0; i<N; i++) {
         scanf("%d", &array[i]);
+=======
+    long long * array = new long long [N];
+
+    for (int i=0; i<N; i++) {
+        scanf("%lld", &array[i]);
+>>>>>>> 21ea9ad6a04d23b6b0df977818f711b7585a6ef2
     }
 
     // sort the array

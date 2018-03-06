@@ -11,8 +11,12 @@ int main() {
     string s_bad;
     set<char> bad_set;
 
+<<<<<<< HEAD
     //cin>>s_bad;
     getline(cin,s_bad);
+=======
+    getline(cin, s_bad);
+>>>>>>> 21ea9ad6a04d23b6b0df977818f711b7585a6ef2
     for (int i=0; i<s_bad.length(); i++) {
         if (s_bad[i] == '+') {
             shift_bad = true;
