@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "任务-1028-0",
+      "appliesTo": "1028/1028-0.cpp",
+      "type": "launch"
+    }
+  ]
+}
