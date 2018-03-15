@@ -34,24 +34,24 @@ int main() {
 
     cin>>a>>b;
 
-    int d_n_d = b.length() - a.length();
+    int length_d = b.length() - a.length();
     // if the b longer than a
-    if (d_n_d > 0) {
+    if (length_d > 0) {
         // print the longer part
-        for (int i = 0; i<d_n_d; i++) {
+        for (int i = 0; i<length_d; i++) {
             printf("%c", b[i]);
         }
         // print the remain
-        for (int i=0; i<b.length() - d_n_d; i++) {
-            // b start at i + d_n_d
-            // i+b.length()-d_n_d be the digital rank
-            printf("%c", encode(a[i], b[i+d_n_d], i+(b.length() - d_n_d)));
+        for (int i=0; i<b.length() - length_d; i++) {
+            // b start at i + length_d
+            // i+b.length()-length_d be the digital rank
+            printf("%c", encode(a[i], b[i+length_d], i+(b.length() - length_d)));
         }
     } else {
         for (int i=0; i<b.length(); i++) {
             // i+b.length() be the digital rank
-            // the a start at i - d_n_d (d_n_d < 0)
-            printf("%c", encode(a[i-d_n_d], b[i], i+b.length()));
+            // the a start at i - length_d (length_d < 0)
+            printf("%c", encode(a[i-length_d], b[i], i+b.length()));
         }
     }
 
