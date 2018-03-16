@@ -9,27 +9,28 @@ int main() {
     int max_time;
 
     cin>>correct_pw>>max_time;
+    getchar();
 
     string input;
-    for (int i=0; i<max_time; i++) {
 
-        cin>>input;
-        
+    getline(cin, input);
+    while (input != "#") {
         if (input == correct_pw) {
             cout<<"Welcome in";
-            while (input != "#") {
-                cin>>input;
-            }
-            return 0;
+            break;
         } else {
-            cout<<"Wrong password: "<<input<<endl;
+            cout<<"Wrong password: "<<input<<endl;;
+            max_time--;
+            if (max_time < 1) {
+                cout<<"Account locked"<<endl;;
+                break;
+            }
         }
+        getline(cin, input);
+    } 
+    while (input != "#") {
+        getline(cin, input);
     }
 
-    cout<<"Account locked";
-    while (input != "#") {
-        cin>>input;
-    }
-    
     return 0;
 }
