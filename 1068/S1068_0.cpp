@@ -29,24 +29,24 @@ int main() {
 
             if (
                     (
-                     ((array[i][j] - array[i-1][j-1]) > threshold) &&
-                     ((array[i][j] - array[i-1][j]) > threshold) &&
-                     ((array[i][j] - array[i-1][j+1]) > threshold) &&
-                     ((array[i][j] - array[i][j-1]) > threshold) &&
-                     ((array[i][j] - array[i][j+1]) > threshold) &&
-                     ((array[i][j] - array[i+1][j-1]) > threshold) &&
-                     ((array[i][j] - array[i+1][j]) > threshold) &&
-                     ((array[i][j] - array[i+1][j+1]) > threshold) 
+                     ((array[i][j] - array[i-1][j-1]) >= threshold) &&
+                     ((array[i][j] - array[i-1][j])   >= threshold) &&
+                     ((array[i][j] - array[i-1][j+1]) >= threshold) &&
+                     ((array[i][j] - array[i][j-1])   >= threshold) &&
+                     ((array[i][j] - array[i][j+1])   >= threshold) &&
+                     ((array[i][j] - array[i+1][j-1]) >= threshold) &&
+                     ((array[i][j] - array[i+1][j])   >= threshold) &&
+                     ((array[i][j] - array[i+1][j+1]) >= threshold)
                     ) || 
                     (
-                     ((array[i][j] - array[i-1][j-1]) < -threshold) &&
-                     ((array[i][j] - array[i-1][j])   < -threshold) &&
-                     ((array[i][j] - array[i-1][j+1]) < -threshold) &&
-                     ((array[i][j] - array[i][j-1])   < -threshold) &&
-                     ((array[i][j] - array[i][j+1])   < -threshold) &&
-                     ((array[i][j] - array[i+1][j-1]) < -threshold) &&
-                     ((array[i][j] - array[i+1][j])   < -threshold) &&
-                     ((array[i][j] - array[i+1][j+1]) < -threshold)
+                     ((array[i][j] - array[i-1][j-1]) <= -threshold) &&
+                     ((array[i][j] - array[i-1][j])   <= -threshold) &&
+                     ((array[i][j] - array[i-1][j+1]) <= -threshold) &&
+                     ((array[i][j] - array[i][j-1])   <= -threshold) &&
+                     ((array[i][j] - array[i][j+1])   <= -threshold) &&
+                     ((array[i][j] - array[i+1][j-1]) <= -threshold) &&
+                     ((array[i][j] - array[i+1][j])   <= -threshold) &&
+                     ((array[i][j] - array[i+1][j+1]) <= -threshold)
                     )
             )  {
 
@@ -67,6 +67,7 @@ int main() {
         printf("Not Exist\n");
     }
 
+    delete [] array;
     return 0;
 }
 

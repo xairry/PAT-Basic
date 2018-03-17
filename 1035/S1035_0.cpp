@@ -19,23 +19,22 @@ int main() {
 
     // test the methods and steps
     // is insert?
-    int max_unmatchi=n-1;
-    while (max_unmatchi > 0 && v[max_unmatchi] == vq[max_unmatchi]) {max_unmatchi--;}
-    int is_insert = 1;
-    for (int i=1; i<=max_unmatchi; i++) {
-        if (vq[i-1] > vq[i]) {
-            is_insert = 0;
-            break;
-        }
-    }
-
+    // Get the number ordered number from the first element, if the result is matched between to array -> Insert
+    int last_ordered(0);
+    for (; vq[last_ordered] <= vq[last_ordered+1] && last_ordered < n-1; last_ordered++);
+    int n_remain_unordered;
+    while (n_remain_unordered + last_ordered < n - 1 && v[last_ordered + n_remain_unordered + 1] == vq[last_ordered + n_remain_unordered + 1]) {n_remain_unordered++;}
+    int is_insert = 0;
+    if (n_remain_unordered + last_ordered == n-1) is_insert = 1;
+    
     // is insert, get the next
     if (is_insert) {
         cout<<"Insertion Sort"<<endl;
-        sort(vq + 0, vq+max_unmatchi+2);
+        sort(vq + 0, vq+last_ordered+2);
     } else {
         cout<<"Merge Sort"<<endl;
         // get the step number
+        // get the minimum of the ordered length, then to get the next
         int min_order=n;
         int n_order = 1;
         for (int i=1; i<n; i++) {
@@ -60,4 +59,8 @@ int main() {
         cout<<vq[i];
         if (i != n-1) cout<<" ";
     }
+
+    delete [] v;
+    delete [] vq;
+    return 0;
 }

@@ -5,13 +5,14 @@ using namespace std;
 
 int get_gcd(int a, int b) {
 
-    int c = a;
+    int c;
     if (b > a) {
         c = a;
         a = b;
         b = c;
     }
-    while (c != 0) {
+
+    while (b != 0) {
         c = a % b;
         a = b;
         b = c;
@@ -22,11 +23,17 @@ int get_gcd(int a, int b) {
 
 int main() {
 
-//    cout<<get_gcd(12, 7);
+//    cout<<get_gcd(8, 4);
 
     // read 
     int n1, d1, n2, d2, d3;
     scanf("%d/%d %d/%d %d", &n1, &d1, &n2, &d2, &d3);
+
+    // make the range meaning !!
+    if (n1 * d2 > n2 * d1) {
+        swap(n1, n2);
+        swap(d1, d2);
+    }
 
     // get the range
     int left, right;

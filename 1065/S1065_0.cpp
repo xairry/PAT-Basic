@@ -24,7 +24,7 @@ int main() {
     int * hash = new int[maxn];
     int * hash2 = new int[maxn];
     memset(hash, 0, maxn);
-    memset(hash2, 0, maxn);
+    memset(hash2, -1, maxn); // !!! the id may be 0, so use -1;
     int m1, m2;
     for (int i=0; i<N; i++) {
         scanf("%d%d", &m1, &m2);
@@ -40,7 +40,7 @@ int main() {
         scanf("%d", &m1);
         hash[m1] += 2;
         m2 = hash2[m1];
-        if (m2 != 0) {
+        if (m2 != -1) {
             hash[m2]++;
         }
     }
@@ -59,7 +59,12 @@ int main() {
         printf("%05d", array[i]);
         if (i != single_n-1) printf(" ");
     }
-    printf("\n");
+//    printf("\n"); !! no new line
+
+
+    delete [] hash;
+    delete [] hash2;
+    delete [] array;
 
     return 0;
 }

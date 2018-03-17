@@ -5,10 +5,8 @@
 
 using namespace std;
 
-string * d0 = new string[13];
-string * d1 = new string[13];
-
-
+string d0[13] = {"tret", "jan", "feb", "mar", "apr", "may", "jun", "jly", "aug", "sep", "oct", "nov", "dec"};
+string d1[13] = {"tret", "tam", "hel", "maa", "huh", "tou", "kes", "hei", "elo", "syy", "lok", "mer", "jou"};
 
 int is_num (string s) {
     if (s[0] <= '9') {
@@ -22,8 +20,12 @@ string number2string (string s) {
     int n;
     sscanf(s.c_str(), "%d", &n);
     string output;
-    if (n / 13 > 0 & n % 13 > 0) {
-        output = d1[n / 13] + " " + d0[n % 13];
+    if (n / 13 > 0) {
+        if (n % 13 > 0) {
+            output = d1[n / 13] + " " + d0[n % 13];
+        } else {
+            output = d1[n / 13];
+        }
     } else {
         output = d0[n % 13];
     }
@@ -63,42 +65,11 @@ void split_by(string &s, vector<string> &vs, char ch) {
 }
 
 int main() {
-
-    d0[0] = "tret";
-    d0[1] = "jan";
-    d0[2] = "feb";
-    d0[3] = "mar";
-    d0[4] = "apr";
-    d0[5] = "may";
-    d0[6] = "jun";
-    d0[7] = "jly";
-    d0[8] = "aug";
-    d0[9] = "sep";
-    d0[10] = "oct";
-    d0[11] = "nov";
-    d0[12] = "dec";
-
-    d1[0] = "tret";
-    d1[1] = "tam";
-    d1[2] = "hel";
-    d1[3] = "maa";
-    d1[4] = "huh";
-    d1[5] = "tou";
-    d1[6] = "kes";
-    d1[7] = "hei";
-    d1[8] = "elo";
-    d1[9] = "syy";
-    d1[10] = "lok";
-    d1[11] = "mer";
-    d1[12] = "jou";
-
-
     
     // input n
     int n;
     cin>>n;
-    char temp;
-    scanf("%c", &temp);
+    getchar();
 
     for (int i=0; i<n; i++) {
         string s;
