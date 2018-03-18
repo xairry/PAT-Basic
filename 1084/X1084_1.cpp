@@ -21,7 +21,7 @@ int main() {
 	for(int i=cntn;i>=0;i--){
 		a+=(num[i]+'0');
 	}
-cout<<a<<endl;
+//cout<<a<<endl;
 	for(int i=1;i<N;i++)
 		{
 		int len=a.size();
