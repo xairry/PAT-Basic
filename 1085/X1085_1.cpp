@@ -39,18 +39,14 @@ int main(){
 	vector<Stu> vstu;
 	vector<Sch> vsch;
 	set<string> st;
-	char *a = new char;
+	
 	for(int i=0;i<N;i++){
 		cin>>stu.id>>stu.sc>>stu.sa;
 		for(int j=0;j<stu.sa.length();j++){
 			stu.sa[j] = tolower(stu.sa[j]);
 		}
+		st.insert(stu.sa);
 		vstu.push_back(stu);
-	}
-	
-	vector<Stu>::iterator it = vstu.begin();
-	for(it;it!=vstu.end();it++){
-		st.insert( (*it).sa);
 	}
 	
 	set<string>::iterator it1=st.begin();
@@ -61,12 +57,12 @@ int main(){
 		sch.sa=(*it1);
 		for(it2;it2!=vstu.end();it2++){
 		
-		if((*it2).sa == (*it1)){
-			cnt++;
-			if((*it2).id[0] == 'A') sum+= (*it2).sc;
-			if((*it2).id[0] == 'B') sum+= (*it2).sc*2/3;
-			if((*it2).id[0] == 'T') sum+= (((*it2).sc*3)>>1);
-		 }
+			if(		(*it2).sa==(*it1)		){
+				cnt++;
+				if((*it2).id[0] == 'A') sum+= (*it2).sc;
+				if((*it2).id[0] == 'B') sum+= (*it2).sc*2/3;
+				if((*it2).id[0] == 'T') sum+= (((*it2).sc*3)>>1);
+			 }
 		
 		}
 		sch.sc = sum;
@@ -82,7 +78,6 @@ int main(){
 		if((*it3).sc != (*(it3-1)).sc){
 			xuhao =( (it3)-vsch.begin() +1);
 		}
-		
 		cout<<xuhao<<" "<<(*it3).sa<< " "<<(*it3).sc<<" "<<(*it3).stucnt<< endl;
 	}
 	
