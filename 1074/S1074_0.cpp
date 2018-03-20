@@ -44,7 +44,7 @@ int main() {
         
         char ch = '0' + (v3 % base);
 
-        if (i != n-1 || ch != '0' || remain != 0 || i == 0)
+        if ((ch != '0' && i != n-1) || ch != '0' || remain != 0 || i == 0)
             so = ch + so;
         
         remain = v3 / base;
